@@ -2,6 +2,7 @@
 import os
 from PIL import Image
 
+
 ORIGINAL_IMG_PATH = "images" # 参照元ディレクトリ
 # pass the image as command line argument
 image_path = os.listdir(ORIGINAL_IMG_PATH)

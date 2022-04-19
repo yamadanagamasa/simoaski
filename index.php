@@ -216,15 +216,10 @@
       //$stmt->bindValue(':image', $image, PDO::PARAM_STR);
       if (!empty($_FILES['image']['name'])) {//ファイルが選択されていれば$imageにファイル名を代入
           move_uploaded_file($_FILES['image']['tmp_name'], 'images/' . $image);//imagesディレクトリにファイル保存
-          if (exif_imagetype($file)) {//画像ファイルかのチェック
             //$command="python main.py ";サーバー用
             $command="python3 main.py";
 
             exec($command,$output);
-          } else {
-              $message = '画像ファイルではありません';
-              array_map('unlink', glob("images/*"));
-          }
       }}
 ?>
   <!--送信ボタンが押された場合-->
